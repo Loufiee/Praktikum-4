@@ -1,0 +1,104 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <h2>Halaman Login</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="button" onclick="login()">Login</button>
+                </div>
+            </form>
+            <div class="error" id="errorMessage"></div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+    </html>
+
+CSS
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    max-width: 350px; /* Sesuaikan lebar maksimum sesuai kebutuhan Anda */
+    padding: 60px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+}
+
+JavaScript
+function login() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    var errorMessage = document.getElementById("errorMessage");
+
+    // Contoh pengecekan username dan password (ganti dengan logika sesuai kebutuhan)
+    if (username === "lovandria@gmail.com" && password === "123") {
+        alert("Login berhasil!");
+    } else {
+        errorMessage.innerHTML = "Username atau password salah!";
+    }
+}
