@@ -1,0 +1,112 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <h1>Playlist Lagu</h1>
+    <div class="song-list">
+        <div class="song">
+            <img src="jms1.jpg" alt="Lagu 1">
+            <audio id="audio1" src="y2mate.is - James Arthur Train Wreck Lyrics -CveANi17YfU-192k-1696900119.mp3"></audio>
+            <div class="controls">
+                <button onclick="playAudio('audio1')">Play</button>
+                <button onclick="pauseAudio('audio1')">Pause</button>
+                <button onclick="stopAudio('audio1')">Stop</button>
+            </div>
+        </div>
+        <div class="song">
+            <img src="jms2.jpg" alt="Lagu 2">
+            <audio id="audio2" src="y2mate.is - james_arthur___car_s_outside__lyrics_-xUT3ZcbVWmQ-192k-1696908854.mp3"></audio>
+            <div class="controls">
+                <button onclick="playAudio('audio2')">Play</button>
+                <button onclick="pauseAudio('audio2')">Pause</button>
+                <button onclick="stopAudio('audio2')">Stop</button>
+            </div>
+        </div>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>
+
+CSS
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.playlist {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.song {
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img {
+    max-width: 200px;
+    max-height: 200px;
+    margin-bottom: 10px;
+}
+
+audio {
+    width: 100%;
+}
+
+.controls {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+JavaScript
+function playAudio(audioId) {
+    const audio = document.getElementById(audioId);
+    audio.play();
+}
+
+function pauseAudio(audioId) {
+    const audio = document.getElementById(audioId);
+    audio.pause();
+}
+
+function stopAudio(audioId) {
+    const audio = document.getElementById(audioId);
+    audio.pause();
+    audio.currentTime = 0;
+}
+
+function seekForward(audioId, seconds) {
+    const audio = document.getElementById(audioId);
+    audio.currentTime += seconds;
+}
